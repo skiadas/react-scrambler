@@ -3,6 +3,7 @@ import useToggle from "./toggle.js";
 import classNames from "classnames";
 import useRandomImage from "./random_image.js";
 import useGridManager from "./grid_manager2.js";
+import DelayedInput from "./delayedInput.js";
 
 function Scrambler() {
   const width = 400;
@@ -42,7 +43,12 @@ function Scrambler() {
       <div id="dimensions">
         <div>
           <label>rows: </label>
-          <input type="text" value={rows} onChange={makeSetter("rows")} />
+          <DelayedInput
+            delay={500}
+            type="text"
+            value={rows}
+            onChange={makeSetter("rows")}
+          />
         </div>
         <div>
           <label>columns: </label>

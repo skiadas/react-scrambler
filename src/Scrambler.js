@@ -28,6 +28,7 @@ function Scrambler() {
 
   const [grid, toggleGrid] = useToggle(true);
   const [preview, togglePreview] = useToggle(true);
+  const shouldPreview = preview && baseImgUrl != null;
 
   return (
     <div id="app">
@@ -56,11 +57,7 @@ function Scrambler() {
         <button onClick={toggleGrid}>Toggle Grid</button>
         <button onClick={togglePreview}>Toggle Preview</button>
       </div>
-      {preview && baseImgUrl != null ? (
-        <img className="preview" src={imgSrc} />
-      ) : (
-        ""
-      )}
+      {shouldPreview ? <img className="preview" src={imgSrc} /> : ""}
       <div
         className="grid"
         style={{
