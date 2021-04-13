@@ -1,0 +1,48 @@
+#app {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+}
+
+#dimensions {
+  display: flex;
+  width: 100%;
+}
+
+#dimensions > * {
+  width: 50%;
+}
+
+#dimensions input {
+  width: 30%;
+}
+
+#app .grid {
+  border: 1px solid black;
+  display: grid;
+  background-color: gray;
+}
+
+#app .grid .tile {
+  position: relative;
+  overflow: hidden;
+}
+
+#app .grid .tile img {
+  position: relative;
+}
+
+#app .grid .tile.selected {
+  filter: grayscale() blur(3px);
+}
+
+#app .preview {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 2px;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  left: 420px;
+  top: 80px;
+}
